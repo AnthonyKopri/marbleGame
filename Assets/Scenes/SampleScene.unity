@@ -605,6 +605,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1261835348
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1261835350}
+  - component: {fileID: 1261835349}
+  m_Layer: 0
+  m_Name: GroundSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1261835349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261835348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5cc6f4622c3fdb44b1e29b94d71ed13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags: []
+--- !u!4 &1261835350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1261835348}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.600579, y: 8.887316, z: 0.8815079}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1293672578 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f2f91b806395d8140b8b6f02128be281,
@@ -798,7 +842,7 @@ GameObject:
   - component: {fileID: 1806953323}
   - component: {fileID: 1806953322}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: ObjectPooler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -819,34 +863,34 @@ MonoBehaviour:
   pools:
   - tag: m1
     prefab: {fileID: 919132149155446097, guid: f2f91b806395d8140b8b6f02128be281, type: 3}
-    size: 2
+    size: 3
   - tag: m2
     prefab: {fileID: 919132149155446097, guid: 4bcc9aac551383543b07eb34342390fc, type: 3}
-    size: 2
+    size: 3
   - tag: m3
     prefab: {fileID: 919132149155446097, guid: 6eb8cb3e4c0335541a7513dd909a5195, type: 3}
-    size: 2
+    size: 3
   - tag: m4
     prefab: {fileID: 919132149155446097, guid: c0e017e1815d0554ab8411a3e4e4310e, type: 3}
-    size: 2
+    size: 3
   - tag: m5
     prefab: {fileID: 919132149155446097, guid: 79a1a3e3de438f349bb0c9011e58b074, type: 3}
-    size: 2
+    size: 3
   - tag: m6
     prefab: {fileID: 919132149155446097, guid: 2ad4d3b148e004249b2b043d1a43c867, type: 3}
-    size: 2
+    size: 3
   - tag: m7
     prefab: {fileID: 919132149155446097, guid: 3b5e8d02e49652d4780b7642669349d3, type: 3}
-    size: 2
+    size: 3
   - tag: m8
     prefab: {fileID: 919132149155446097, guid: bf0aa7be375815c46a6d34318ec57a18, type: 3}
-    size: 2
+    size: 3
   - tag: m9
     prefab: {fileID: 919132149155446097, guid: 27ffd4c81aea063449e9009a7c177ff0, type: 3}
-    size: 2
+    size: 3
   - tag: m10
     prefab: {fileID: 919132149155446097, guid: be8c79b47f44b184b85cb059bdeaf8c0, type: 3}
-    size: 2
+    size: 3
 --- !u!4 &1806953323
 Transform:
   m_ObjectHideFlags: 0

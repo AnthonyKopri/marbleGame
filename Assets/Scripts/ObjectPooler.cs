@@ -38,12 +38,14 @@ public class ObjectPooler : MonoBehaviour
             }
 
             poolDictionary.Add(pool.tag, objectPool);
+
+            Debug.Log(pool.tag);
         }
     }
 
     public GameObject SpawnFromPool (string tag, Vector3 position, Quaternion rotation)
     {
-        if (poolDictionary.ContainsKey(tag))
+        if (!poolDictionary.ContainsKey(tag))
         {
             Debug.LogWarning("Pool with [" + tag + "] tag doesn't exist");
             return null;
