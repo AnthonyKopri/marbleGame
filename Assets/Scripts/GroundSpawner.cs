@@ -7,6 +7,9 @@ public class GroundSpawner : MonoBehaviour
     ObjectPooler objectPooler;
     public List<string> tags = new List<string>();
     int rand;
+    int counter = 0;
+    public bool flipped;
+    float timer = 1f;
 
     private void Start()
     {
@@ -20,7 +23,26 @@ public class GroundSpawner : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rand = Random.Range(0, 10);
-        objectPooler.SpawnFromPool(tags[rand], transform.position + transform.right * Random.Range(0,100), Quaternion.identity);
+        timer -= Time.deltaTime;
+
+        if(timer <= 0)
+        {
+            rand = Random.Range(0, 10);
+            int mirror = Random.Range(0, 2);
+
+            if (mirror == 0)
+            {
+                objectPooler.SpawnFromPool(tags[rand], transform.position + new Vector3(counter, 0, 0), Quaternion.Euler(-90, -90, 0));
+            }
+            else
+            {
+                objectPooler.SpawnFromPool(tags[rand], transform.position + new Vector3(counter, 0, 0), Quaternion.Euler(-90, 90, 0));
+            }
+            counter += 20;
+
+            timer = 1f;
+        }
+
+        
     }
 }
