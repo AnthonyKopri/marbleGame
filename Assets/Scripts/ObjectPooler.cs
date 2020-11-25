@@ -33,7 +33,7 @@ public class ObjectPooler : MonoBehaviour
             for (int i = 0; i < pool.size; i++)
             {
                 GameObject obj = Instantiate(pool.prefab);
-                obj.SetActive(false);
+                obj.SetActive(true);
                 objectPool.Enqueue(obj);
             }
 
@@ -55,6 +55,12 @@ public class ObjectPooler : MonoBehaviour
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
 
+        IPooledObject pooledObj = objectToSpawn.GetComponent<IPooledObject>();
+
+        if(pooledObj != null)
+        {
+            pooledObj.OnObjectSpawn();
+        }
         poolDictionary[tag].Enqueue(objectToSpawn);
         
         return objectToSpawn;
