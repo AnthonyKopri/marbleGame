@@ -14,6 +14,8 @@ public class ObjectPooler : MonoBehaviour
 
     public List<Pool> pools;
     public Dictionary<string, Queue<GameObject>> poolDictionary;
+    public List<GameObject> poolOrderBottom = new List<GameObject>();
+    public List<GameObject> poolOrderTop = new List<GameObject>();
 
     #region Singleton
     public static ObjectPooler Instance;
@@ -34,7 +36,7 @@ public class ObjectPooler : MonoBehaviour
             {
                 GameObject obj = Instantiate(pool.prefab);
                 obj.SetActive(false);
-                objectPool.Enqueue(obj);
+                objectPool.Enqueue(obj);                
             }
 
             poolDictionary.Add(pool.tag, objectPool);
@@ -43,7 +45,7 @@ public class ObjectPooler : MonoBehaviour
         }
     }
 
-    public GameObject SpawnFromPool (string tag, Vector3 position, Quaternion rotation)
+    public GameObject SpawnFromPoolBottom (string tag, Vector3 position, Quaternion rotation)
     {
         if (!poolDictionary.ContainsKey(tag))
         {
@@ -56,7 +58,27 @@ public class ObjectPooler : MonoBehaviour
         objectToSpawn.SetActive(true);
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
+        //poolOrderBottom.Clear();
+        poolOrderBottom.Add(objectToSpawn);        
+        poolDictionary[tag].Enqueue(objectToSpawn);
+        
+        return objectToSpawn;
+    } 
+    public GameObject SpawnFromPoolTop (string tag, Vector3 position, Quaternion rotation)
+    {
+        if (!poolDictionary.ContainsKey(tag))
+        {
+            Debug.LogWarning("Pool with [" + tag + "] tag doesn't exist");
+            return null;
+        }
+        
+        GameObject objectToSpawn = poolDictionary[tag].Dequeue();
 
+        objectToSpawn.SetActive(true);
+        objectToSpawn.transform.position = position;
+        objectToSpawn.transform.rotation = rotation;
+        //poolOrderTop.Clear();
+        poolOrderTop.Add(objectToSpawn);        
         poolDictionary[tag].Enqueue(objectToSpawn);
         
         return objectToSpawn;

@@ -34,13 +34,13 @@ public class GroundSpawner : MonoBehaviour
 
             if (mirror == 0)
             {
-                objectPooler.SpawnFromPool(tags[rand], transform.position + new Vector3(counter, 0, 0), Quaternion.Euler(-90, -90, 0));
-                objectPooler.SpawnFromPool(tags[rand2], transform.position + new Vector3(counter, 10, 0), Quaternion.Euler(-270, -90, 0));
+                objectPooler.SpawnFromPoolBottom(tags[rand], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count-1].transform.position.x + 20f, 0, 0), Quaternion.Euler(-90, -90, 0));
+                objectPooler.SpawnFromPoolTop(tags[rand2], transform.position + new Vector3(objectPooler.poolOrderTop[objectPooler.poolOrderTop.Count-1].transform.position.x + 20f, 10, 0), Quaternion.Euler(-270, -90, 0));
             }
             else
             {
-                objectPooler.SpawnFromPool(tags[rand], transform.position + new Vector3(counter, 0, 0), Quaternion.Euler(-90, 90, 0));
-                objectPooler.SpawnFromPool(tags[rand2], transform.position + new Vector3(counter, 10, 0), Quaternion.Euler(-270, 90, 0));
+                objectPooler.SpawnFromPoolBottom(tags[rand], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count-1].transform.position.x + 20f, 0, 0), Quaternion.Euler(-90, 90, 0));
+                objectPooler.SpawnFromPoolTop(tags[rand2], transform.position + new Vector3(objectPooler.poolOrderTop[objectPooler.poolOrderTop.Count-1].transform.position.x + 20f, 10, 0), Quaternion.Euler(-270, 90, 0));
 
             }
             counter += 20;

@@ -10,16 +10,16 @@ public class AutoMovement : MonoBehaviour
     public Rigidbody rb;
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        if(rb.velocity.x < 0f)
-        {
-            rb.velocity = new Vector3(rb.velocity.x * -1, rb.velocity.y, rb.velocity.z);
-        }
-        rb.velocity = speed * rb.velocity.normalized;
+        //if(rb.velocity.x < 0f)
+        //{
+        //    rb.velocity = new Vector3(rb.velocity.x * -1, rb.velocity.y, rb.velocity.z);
+        //}
+        //rb.velocity = speed * rb.velocity.normalized;
         if (Input.GetMouseButtonDown(0))
         {
             gravSwitch = !gravSwitch;
