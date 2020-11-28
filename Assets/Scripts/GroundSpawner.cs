@@ -30,31 +30,31 @@ public class GroundSpawner : MonoBehaviour
         {
             rand = Random.Range(0, 10);
             int rand2 = Random.Range(0, 10);
-            int rand3 = 10;
+            int rand3 = Random.Range(10, 13);
             int mirror = Random.Range(0, 2);
 
             if (mirror == 0)
             {
                 objectPooler.SpawnFromPoolBottom(tags[rand], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count-1].transform.position.x + 20f, 0, 0), Quaternion.Euler(-90, -90, 0));
-                objectPooler.SpawnFromPoolTop(tags[rand2], transform.position + new Vector3(objectPooler.poolOrderTop[objectPooler.poolOrderTop.Count-1].transform.position.x + 20f, 10, 0), Quaternion.Euler(-270, -90, 0));
+                objectPooler.SpawnFromPoolTop(tags[rand2], transform.position + new Vector3(objectPooler.poolOrderTop[objectPooler.poolOrderTop.Count-1].transform.position.x + 20f, 20, 0), Quaternion.Euler(-270, -90, 0));
                 if (rand3 == 10)
-                objectPooler.SpawnFromPoolBottom(tags[rand3], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + 2f, 0), Quaternion.Euler(270, 90, 0));
+                objectPooler.SpawnFromPoolObstacle(tags[rand3], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + 4.5f, 0), Quaternion.Euler(270, 90, 0));
                 if(rand3 == 11)                
-                objectPooler.SpawnFromPoolBottom(tags[rand3], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + 2f, 0), Quaternion.Euler(0, 90, 0));
+                objectPooler.SpawnFromPoolObstacle(tags[rand3], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + 4.5f, 0), Quaternion.Euler(0, 90, 0));
                 if (rand3 == 12)
-                objectPooler.SpawnFromPoolTop(tags[rand3], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + 5.8f, 0), Quaternion.Euler(180, -90, 0));
+                objectPooler.SpawnFromPoolObstacle(tags[rand3], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + 5.8f, 0), Quaternion.Euler(180, -90, 0));
 
             }
             else
             {
                 objectPooler.SpawnFromPoolBottom(tags[rand], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count-1].transform.position.x + 20f, 0, 0), Quaternion.Euler(-90, 90, 0));
-                objectPooler.SpawnFromPoolTop(tags[rand2], transform.position + new Vector3(objectPooler.poolOrderTop[objectPooler.poolOrderTop.Count-1].transform.position.x + 20f, 10, 0), Quaternion.Euler(-270, 90, 0));
+                objectPooler.SpawnFromPoolTop(tags[rand2], transform.position + new Vector3(objectPooler.poolOrderTop[objectPooler.poolOrderTop.Count-1].transform.position.x + 20f, 20, 0), Quaternion.Euler(-270, 90, 0));
                 if (rand3 == 10)
-                objectPooler.SpawnFromPoolTop(tags[rand3], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + 5.8f, 0), Quaternion.Euler(90, -90, 0));
+                objectPooler.SpawnFromPoolObstacle(tags[rand3], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + 16f, 0), Quaternion.Euler(90, -90, 0));
                 if (rand3 == 11)
-                objectPooler.SpawnFromPoolTop(tags[rand3], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + 5.8f, 0), Quaternion.Euler(180, -90, 0));if (rand3 == 11)
-                if(rand3 == 12)
-                objectPooler.SpawnFromPoolTop(tags[rand3], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + 5.8f, 0), Quaternion.Euler(180, -90, 0));
+                objectPooler.SpawnFromPoolObstacle(tags[rand3], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + 16f, 0), Quaternion.Euler(180, -90, 0));if (rand3 == 11)
+                if (rand3 == 12)
+                objectPooler.SpawnFromPoolObstacle(tags[rand3], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + 5.8f, 0), Quaternion.Euler(180, -90, 0));
             }
 
             //objectPooler.SpawnFromPoolBottom(tags[Random.Range(10,13)], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + 3, 0), Quaternion.Euler(-90, 90, 0));

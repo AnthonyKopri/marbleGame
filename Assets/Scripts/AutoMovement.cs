@@ -11,7 +11,7 @@ public class AutoMovement : MonoBehaviour
     public int x, y, z;
     private void Start()
     {
-        //rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -28,11 +28,14 @@ public class AutoMovement : MonoBehaviour
         }
         if (gravSwitch)
         {
+            //rb.AddForce(new Vector3(0, gravForce, 0));
             Physics.gravity = new Vector3(0, gravForce, 0);
             z = 11;
         }
         else
         {
+            //rb.AddForce(new Vector3(0, -gravForce, 0));
+
             Physics.gravity = new Vector3(0, -gravForce, 0);
             z = -11;
         }
