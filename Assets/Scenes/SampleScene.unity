@@ -865,6 +865,17 @@ MonoBehaviour:
   - tag: m10
     prefab: {fileID: 213786210945869, guid: 230fed2236ebb2e478e23fbe59610220, type: 3}
     size: 20
+  - tag: Hammer
+    prefab: {fileID: 4587735751227859479, guid: 8a0ee3878caa7194d9ab4301e1c31a30,
+      type: 3}
+    size: 20
+  - tag: Spikes
+    prefab: {fileID: 2473111162731114726, guid: cf84fc4c15bce2c49822b7771c6c7a40,
+      type: 3}
+    size: 20
+  - tag: SpikyBall
+    prefab: {fileID: 914118062803854921, guid: a0d164558146b0643b712e58f8704da2, type: 3}
+    size: 20
   poolOrderBottom:
   - {fileID: 919132148641412937}
   poolOrderTop:
