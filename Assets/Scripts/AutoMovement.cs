@@ -25,6 +25,7 @@ public class AutoMovement : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             gravSwitch = !gravSwitch;
+            AndroidHaptic.HapticFeedback();
         }
         if (gravSwitch)
         {

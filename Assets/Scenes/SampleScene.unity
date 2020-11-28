@@ -235,7 +235,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1315,8 +1315,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tags: []
   flipped: 0
-  timer: 2
-  deger: 2
+  timerForGrounds: 2
+  degerForGrounds: 2
+  timerForObstacles: 1.8
+  degerForObstacles: 1.8
 --- !u!4 &1261835350
 Transform:
   m_ObjectHideFlags: 0
@@ -1845,7 +1847,8 @@ MonoBehaviour:
   - {fileID: 919132148641412937}
   poolOrderTop:
   - {fileID: 1218649792}
-  poolOrderObstacle: []
+  poolOrderObstacle:
+  - {fileID: 919132148641412937}
 --- !u!4 &1806953323
 Transform:
   m_ObjectHideFlags: 0
