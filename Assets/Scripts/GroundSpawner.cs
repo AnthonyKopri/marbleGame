@@ -33,7 +33,7 @@ public class GroundSpawner : MonoBehaviour
         {
             rand = Random.Range(0, 10);
             int rand2 = Random.Range(0, 10);
-            int rand3 = Random.Range(10,13);
+            //int rand3 = /*Random.Range(10,13);*/
             int mirror = Random.Range(0, 2);
 
             if (mirror == 0)
@@ -57,7 +57,7 @@ public class GroundSpawner : MonoBehaviour
         if(timerForObstacles <= 0)
         {
             
-            int rand3 = Random.Range(10,13);
+            int rand3 = Random.Range(10,14);
             int mirror = Random.Range(0, 2);
 
             if (mirror == 0)
@@ -70,7 +70,9 @@ public class GroundSpawner : MonoBehaviour
                 objectPooler.SpawnFromPoolObstacle(tags[rand3], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + 4.5f, 0), Quaternion.Euler(0, 90, 0));
                 //spikyball
                 if (rand3 == 12)
-                objectPooler.SpawnFromPoolObstacle(tags[rand3], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + 4f, 0), Quaternion.Euler(180, -90, 0));
+                objectPooler.SpawnFromPoolObstacle(tags[rand3], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + 4f, 0), Quaternion.Euler(180, -90, 0)); 
+                if (rand3 == 13)
+                objectPooler.SpawnFromPoolObstacle(tags[rand3], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + 10f, 0), Quaternion.Euler(180, -90, 0));
 
             }
             else
@@ -80,10 +82,12 @@ public class GroundSpawner : MonoBehaviour
                 objectPooler.SpawnFromPoolObstacle(tags[rand3], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + 16f, 0), Quaternion.Euler(90, -90, 0));
                 //spike
                 if (rand3 == 11)
-                objectPooler.SpawnFromPoolObstacle(tags[rand3], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + 16f, 0), Quaternion.Euler(180, -90, 0));if (rand3 == 11)
+                objectPooler.SpawnFromPoolObstacle(tags[rand3], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + 16f, 0), Quaternion.Euler(180, -90, 0));
                 //spikyball
                 if (rand3 == 12)
                 objectPooler.SpawnFromPoolObstacle(tags[rand3], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + 4f, 0), Quaternion.Euler(180, -90, 0));
+                if (rand3 == 13)
+                objectPooler.SpawnFromPoolObstacle(tags[rand3], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + 10f, 0), Quaternion.Euler(180, -90, 0));
             }
 
             
