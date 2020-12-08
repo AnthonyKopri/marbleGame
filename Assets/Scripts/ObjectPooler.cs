@@ -98,9 +98,10 @@ public class ObjectPooler : MonoBehaviour
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
         poolOrderObstacle.Clear();
-        poolOrderObstacle.Add(objectToSpawn);        
+        poolOrderObstacle.Add(objectToSpawn);                
         poolDictionary[tag].Enqueue(objectToSpawn);
         
         return objectToSpawn;
     }
+    
 }

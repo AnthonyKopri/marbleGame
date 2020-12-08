@@ -8,7 +8,7 @@ public class Colliding : MonoBehaviour
     public GameObject gameOverScreen;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Obstacle"))
+        if (other.CompareTag("Obstacle") || other.CompareTag("Obstaclee"))
             Time.timeScale = 0;
         gameOverScreen.SetActive(true);
         UIManager.instance.score.text = "Score: " + Score.instance.score.text;

@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 7215308723557438587}
   - component: {fileID: 6917332508117135388}
   - component: {fileID: 5882035475124330379}
+  - component: {fileID: 8477295813127343654}
   m_Layer: 0
   m_Name: LogSpike2
   m_TagString: Obstacle
@@ -374,6 +375,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c48a432ae44dfb04e8e6ab1011bd9dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8477295813127343654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942127702558010981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59fe6e14df55c0e4b8d8b845a804903f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1047521514228896858
