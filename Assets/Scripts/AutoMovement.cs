@@ -16,6 +16,7 @@ public class AutoMovement : MonoBehaviour
 
     void Update()
     {
+        ParticleManager.instance.bubbleStream.transform.position = transform.position + Vector3.back;
         transform.Rotate(new Vector3(x, y, z));
         //if(rb.velocity.x < 0f)
         //{
