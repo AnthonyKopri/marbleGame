@@ -17,6 +17,7 @@ public class ObjectPooler : MonoBehaviour
     public List<GameObject> poolOrderBottom = new List<GameObject>();
     public List<GameObject> poolOrderTop = new List<GameObject>();
     public List<GameObject> poolOrderObstacle = new List<GameObject>();
+    public List<GameObject> poolOrderGold = new List<GameObject>();
 
     #region Singleton
     public static ObjectPooler Instance;
@@ -99,6 +100,25 @@ public class ObjectPooler : MonoBehaviour
         objectToSpawn.transform.rotation = rotation;
         poolOrderObstacle.Clear();
         poolOrderObstacle.Add(objectToSpawn);                
+        poolDictionary[tag].Enqueue(objectToSpawn);
+        
+        return objectToSpawn;
+    }
+    public GameObject SpawnFromPoolCoin (string tag, Vector3 position, Quaternion rotation)
+    {
+        if (!poolDictionary.ContainsKey(tag))
+        {
+            Debug.LogWarning("Pool with [" + tag + "] tag doesn't exist");
+            return null;
+        }
+        
+        GameObject objectToSpawn = poolDictionary[tag].Dequeue();
+
+        objectToSpawn.SetActive(true);
+        objectToSpawn.transform.position = position;
+        objectToSpawn.transform.rotation = rotation;
+        poolOrderGold.Clear();
+        poolOrderGold.Add(objectToSpawn);                
         poolDictionary[tag].Enqueue(objectToSpawn);
         
         return objectToSpawn;

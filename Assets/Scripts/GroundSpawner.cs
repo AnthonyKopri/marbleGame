@@ -12,6 +12,8 @@ public class GroundSpawner : MonoBehaviour
     public float timerForGrounds = 2f;
     public float degerForGrounds;
     public float timerForObstacles = 1f;
+    public float timerForGold = 3f;
+    public float degerForGold;
     public float degerForObstacles;
 
 
@@ -29,6 +31,7 @@ public class GroundSpawner : MonoBehaviour
     {
         timerForGrounds -= Time.deltaTime;
         timerForObstacles -= Time.deltaTime;
+        timerForGold -= Time.deltaTime;
         if(timerForGrounds <= 0)
         {
             rand = Random.Range(0, 10);
@@ -94,6 +97,13 @@ public class GroundSpawner : MonoBehaviour
 
             timerForObstacles = degerForObstacles;
         }
+
+        if(timerForGold <= 0)
+        {
+            objectPooler.SpawnFromPoolCoin(tags[14], transform.position + new Vector3(objectPooler.poolOrderBottom[objectPooler.poolOrderGold.Count - 1].transform.position.x, objectPooler.poolOrderBottom[objectPooler.poolOrderBottom.Count - 1].transform.position.y + Random.Range(2f,13f), 0), Quaternion.Euler(180, -90, 0));
+            timerForGold = degerForGold;
+        }
+
 
         
     }

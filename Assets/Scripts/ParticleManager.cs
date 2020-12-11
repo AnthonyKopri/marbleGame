@@ -20,4 +20,5 @@ public class ParticleManager : MonoBehaviour
     #endregion
     public ParticleSystem bubbleStream;
     public ParticleSystem iceSpikeTrail;
+    public ParticleSystem goldParticle;
 }
