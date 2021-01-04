@@ -14,8 +14,8 @@ public class SpikeMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.left * Time.deltaTime * 25;
-        transform.position += Vector3.down * Time.deltaTime * 5;
-        transform.Rotate(new Vector3(11, 0, 0));
+        transform.position += Vector3.left * Time.deltaTime * 17f;
+        transform.position += Vector3.down * Time.deltaTime * 5f;
+        transform.Rotate(new Vector3(5.5f, 0, 0));
     }
 }

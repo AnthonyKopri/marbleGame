@@ -25,6 +25,11 @@ public class Colliding : MonoBehaviour
 
             Destroy(other.gameObject);
         }
+        if(other.CompareTag("MidSpawner"))
+        {
+            print("duh");
+            transform.position = new Vector3(transform.position.x, 10, transform.position.z);
+        }
     }
     
 }
