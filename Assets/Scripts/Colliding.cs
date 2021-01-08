@@ -2,10 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Colliding : MonoBehaviour
 {
     public GameObject gameOverScreen;
+    public AudioClip coinPickUp1;
+    public AudioClip coinPickUp2;
+    int rand;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Obstacle") || other.CompareTag("Obstaclee"))
@@ -22,7 +26,11 @@ public class Colliding : MonoBehaviour
             ParticleManager.instance.goldParticle.transform.position = other.transform.position;
             ParticleManager.instance.goldParticle.Clear();
             ParticleManager.instance.goldParticle.Play();
-
+            rand = Random.Range(1, 2);
+            if(rand == 1)
+                AudioSource.PlayClipAtPoint(coinPickUp1, transform.position);
+            else
+                AudioSource.PlayClipAtPoint(coinPickUp2, transform.position);
             Destroy(other.gameObject);
         }
         if(other.CompareTag("MidSpawner"))
