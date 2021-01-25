@@ -15,7 +15,7 @@ public class Interstitial : MonoBehaviour
     {
 
 #if UNITY_ANDROID
-        interstitialId = "ca-app-pub-3940256099942544/1033173712";
+        interstitialId = "ca-app-pub-9542548469545773/7422388359";
 #elif UNITY_IPHONE
         interstitialId = "ca-app-pub-3940256099942544/1033173712";
 #else

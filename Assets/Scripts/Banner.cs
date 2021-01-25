@@ -16,7 +16,7 @@ public class Banner : MonoBehaviour
     {
 
 #if UNITY_ANDROID
-        bannerId = "ca-app-pub-3940256099942544/6300978111";
+        bannerId = "ca-app-pub-9542548469545773/7320098968";
 #elif UNITY_IPHONE
         bannerId = "ca-app-pub-3940256099942544/6300978111";
 #else
